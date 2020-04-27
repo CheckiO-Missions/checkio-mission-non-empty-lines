@@ -1,16 +1,14 @@
 <!-- Describe task in general -->
 
 <p>
-    Sum two passed ints
+    You need to count how many non-empty lines a given text has.
 </p>
 
-<p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
-</p>
+<p>Empty line is a line without symbols or with only space symbols</p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two arguments. Both are ints.
+    <strong>Input: </strong> Text.
 </p>
 
 <p>
@@ -25,28 +23,26 @@
     </p>
 
 {% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<pre class="brush: javascript">nonEmptyLines('one simple line') == 1
+nonEmptyLines('') == 0
+nonEmptyLines('\nonly one line\n            ') == 1
+nonEmptyLines(`
+Lorem ipsum dolor sit amet,
+
+consectetur adipiscing elit
+Nam odio nisi, aliquam
+            `) == 3
 </pre>
 {% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
+<pre class="brush: python">non_empty_lines('one simple line') == 1
+non_empty_lines('') == 0
+non_empty_lines('\nonly one line\n            ') == 1
+non_empty_lines('''
+Lorem ipsum dolor sit amet,
+
+consectetur adipiscing elit
+Nam odio nisi, aliquam
+            ''') == 3
 </pre>
 {% endif %}
 </div>
-
-
-<!-- Here you can explain how it can be used in development -->
-<!-- The section is optional -->
-<p class="for_info_only">
-
-    <strong>How it’s used: </strong>
-    <i>(math is used everywhere)</i>
-</p>
-
-<!-- Here you can explain some constraints for input-->
-<!-- The section is optional -->
-<p>
-    <strong>Precondition:</strong>
-    <i>both given ints should be between -1000 and 1000</i>
-</p>
