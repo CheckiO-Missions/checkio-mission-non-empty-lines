@@ -1,0 +1,87 @@
+
+
+
+
+
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        Я не знаю, як розпочати вирішення цієї місії
+    </div>
+    <div class="answer">
+        Тобі потрібно розділити заданий текст на рядки та відфільтрувати порожні рядки (включаючи навіть пробіли) від непорожніх.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Мені потрібна допомога, щоб продовжити місію
+    </div>
+    <div class="answer">
+        Тобі буде корисно прочитати трохи інформації про два рядкових методи:  <a href='https://docs.python.org/3.10/library/stdtypes.html?highlight=split#str.split'>str.split() та str.strip()</a>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Потрібна допомога!
+    </div>
+    <div class="answer">
+        Подивись, як працює метод str.split():
+        <pre class="brush: python">
+text = "Hello, world!"
+text.split()  # По замовчуванню, str.split() повертає список слів у рядку,
+              # використовуючи "sep" як пробіли
+>> ['Hello,', 'world!']
+
+text.split('o')  # Якщо ми введемо "sep" як літеру "o", ми побачимо наступне
+>> ['Hell', ', w', 'rld!']
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Я застряг. Мені потрібна маленька підказка.
+    </div>
+    <div class="answer">
+        Подивись, як працює метод str.strip():
+        <pre class="brush: python">
+txt = "     banana     "
+txt.strip()  # У нас багато пробілів на початку і в кінці слова
+>> "banana"  # За допомогою txt.strip() ми видаляємо пробіли на початку та в кінці рядка
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Нічого не працює. SOS
+    </div>
+    <div class="answer">
+        Гаразд, тобі потрібно об’єднати два методи за допомогою циклу for і умови «if». В умові «якщо» потрібно перевірити
+          чи рядок порожній чи ні, використовуючи <a href='https://docs.python.org/3.10/library/functions.html#len'>len()</a>
+        <pre class="brush: python">
+text = "Hello, world!"
+for i in text.split():  # Використовуй цикл for для проходження по розділеному тексту ("Hello," і "world!")
+    if len(i.strip()) > 0:  # Перевір, чи рядки не пусті
+            print("OK")  # Надрукуй "ОК", якщо все добре
+>> "OK"
+>> "OK"
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        Останнє запитання. Як виглядатиме моє остаточне рішення?
+    </div>
+    <div class="answer">
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+    t = 0
+    for i in text.split('\n'):
+        if len(i.strip()) > 0:
+            t += 1
+    return t
+        </pre>
+    </div>
+</div>
+
+
+</body>
