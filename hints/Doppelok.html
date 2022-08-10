@@ -9,7 +9,7 @@
         I have no idea how to start solving this mission
     </div>
     <div class="answer">
-        You need to split the given text into strings and filter the empty strings (which includes even only spaces) and non-empty.
+        You need to split the given text into strings and filter the empty strings (or even if only spaces in the string) and non-empty.
     </div>
 </div>
 <div class="question-answer">
@@ -17,7 +17,8 @@
         I need some help to proceed with the mission
     </div>
     <div class="answer">
-        It will be useful for you to read some information about two string methods:  <a href='https://docs.python.org/3.10/library/stdtypes.html?highlight=split#str.split'>str.split() and str.strip()</a>
+        It will be useful for you to read some information about two string methods:  <a href='https://docs.python.org/3.10/library/stdtypes.html?highlight=split#str.split'>str.split()</a> and
+         <a href='https://docs.python.org/3.10/library/stdtypes.html?highlight=strip#str.strip'>str.strip()</a>.
     </div>
 </div>
 <div class="question-answer">
@@ -35,6 +36,7 @@ text.split()  # By default, str.split() return a list of the words in the string
 text.split('o')  # If we enter "sep" as letter "o", we will see next
 >> ['Hell', ', w', 'rld!']
         </pre>
+        In our case, you need to use "\n" as "sep". This is the new line symbol, it marks where the current line ends and a new line begins.
     </div>
 </div>
 <div class="question-answer">
@@ -47,7 +49,7 @@ text.split('o')  # If we enter "sep" as letter "o", we will see next
 txt = "     banana     "
 txt.strip()  # We have a lot of spaces at the beginning and at the end of the word
 >> "banana"  # Using txt.strip() we remove spaces at the beginning and at the
-             # end of the string
+             # end of the word
         </pre>
     </div>
 </div>
@@ -80,6 +82,14 @@ def non_empty_lines(text: str) -> int:
         if len(i.strip()) > 0:
             t += 1
     return t
+        </pre>
+        Look at the one-line mission solution, this option allows you to reduce your code and make it more lightweight
+          from redundant variables of the "t = 0" type.
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+    return len([x for x in s.split("\n") if x.strip()])
+    # Here we are not using a row counter, but a list of non-empty rows.
+    # And as a result, we return its length using len()
         </pre>
     </div>
 </div>
