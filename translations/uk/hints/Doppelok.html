@@ -61,7 +61,8 @@ txt.strip()  # У нас багато пробілів на початку і в
           чи рядок порожній чи ні, використовуючи <a href='https://docs.python.org/3.10/library/functions.html#len'>len()</a>
         <pre class="brush: python">
 text = "Hello, world!"
-for i in text.split():  # Використовуй цикл for для проходження по розділеному тексту ("Hello," і "world!")
+for i in text.split():  # Використовуй цикл for для проходження
+                        # по розділеному тексту ("Hello," і "world!")
     if len(i.strip()) > 0:  # Перевір, чи рядки не пусті
             print("OK")  # Надрукуй "ОК", якщо все добре
 >> "OK"

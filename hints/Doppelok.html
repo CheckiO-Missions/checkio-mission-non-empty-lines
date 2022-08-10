@@ -62,7 +62,8 @@ txt.strip()  # We have a lot of spaces at the beginning and at the end of the wo
          if the string is empty or not, using <a href='https://docs.python.org/3.10/library/functions.html#len'>len()</a>
         <pre class="brush: python">
 text = "Hello, world!"
-for i in text.split():  # Use for loop to iterate the splitted  text ("Hello," and "world!")
+for i in text.split():  # Use for loop to iterate the splitted text
+                        # ("Hello," and "world!")
     if len(i.strip()) > 0:  # Check if the strings are not empty
             print("OK")  # Print "OK" if all good
 >> "OK"
