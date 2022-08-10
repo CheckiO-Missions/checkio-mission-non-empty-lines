@@ -1,0 +1,98 @@
+
+
+
+
+
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        I have no idea how to start solving this mission
+    </div>
+    <div class="answer">
+        You need to split the given text into strings and filter the empty strings (or even if only spaces in the string) and non-empty.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I need some help to proceed with the mission
+    </div>
+    <div class="answer">
+        It will be useful for you to read some information about two string methods:  <a href='https://docs.python.org/3.10/library/stdtypes.html?highlight=split#str.split'>str.split()</a> and
+         <a href='https://docs.python.org/3.10/library/stdtypes.html?highlight=strip#str.strip'>str.strip()</a>.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I have gone halfway through. Need help!
+    </div>
+    <div class="answer">
+        Look how works str.split() method:
+        <pre class="brush: python">
+text = "Hello, world!"
+text.split()  # By default, str.split() return a list of the words in the string,
+              # using "sep" as spaces
+>> ['Hello,', 'world!']
+
+text.split('o')  # If we enter "sep" as letter "o", we will see next
+>> ['Hell', ', w', 'rld!']
+        </pre>
+        In our case, you need to use "\n" as "sep". This is the new line symbol, it marks where the current line ends and a new line begins.
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I am stuck. I need a small hint.
+    </div>
+    <div class="answer">
+        Look how works str.strip() method:
+        <pre class="brush: python">
+txt = "     banana     "
+txt.strip()  # We have a lot of spaces at the beginning and at the end of the word
+>> "banana"  # Using txt.strip() we remove spaces at the beginning and at the
+             # end of the word
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        I tried all I could. Nothing works. SOS
+    </div>
+    <div class="answer">
+        Okay, you need to combine two methods using for-loop and condition "if". In condition "if" we need to check
+         if the string is empty or not, using <a href='https://docs.python.org/3.10/library/functions.html#len'>len()</a>
+        <pre class="brush: python">
+text = "Hello, world!"
+for i in text.split():  # Use for loop to iterate the splitted  text ("Hello," and "world!")
+    if len(i.strip()) > 0:  # Check if the strings are not empty
+            print("OK")  # Print "OK" if all good
+>> "OK"
+>> "OK"
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        One last question. How my final solution will look like?
+    </div>
+    <div class="answer">
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+    t = 0
+    for i in text.split('\n'):
+        if len(i.strip()) > 0:
+            t += 1
+    return t
+        </pre>
+        Look at the one-line mission solution, this option allows you to reduce your code and make it more lightweight
+          from redundant variables of the "t = 0" type.
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+    return len([x for x in s.split("\n") if x.strip()])
+    # Here we are not using a row counter, but a list of non-empty rows.
+    # And as a result, we return its length using len()
+        </pre>
+    </div>
+</div>
+
+
+</body>

@@ -22,27 +22,5 @@
         <strong>Example:</strong>
     </p>
 
-{% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">nonEmptyLines('one simple line') == 1
-nonEmptyLines('') == 0
-nonEmptyLines('\nonly one line\n            ') == 1
-nonEmptyLines(`
-Lorem ipsum dolor sit amet,
-
-consectetur adipiscing elit
-Nam odio nisi, aliquam
-            `) == 3
-</pre>
-{% else %}
-<pre class="brush: python">non_empty_lines('one simple line') == 1
-non_empty_lines('') == 0
-non_empty_lines('\nonly one line\n            ') == 1
-non_empty_lines('''
-Lorem ipsum dolor sit amet,
-
-consectetur adipiscing elit
-Nam odio nisi, aliquam
-            ''') == 3
-</pre>
-{% endif %}
+<pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
 </div>
