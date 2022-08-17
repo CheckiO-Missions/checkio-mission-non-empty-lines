@@ -51,5 +51,15 @@ Nullam ante ligula,
             '''],
             "answer": 5,
         },
+
+        {
+            "input": ['''
+Do you want,
+
+a story
+about lazy boy?
+            '''],
+            "answer": 3,
+        },
     ]
 }
