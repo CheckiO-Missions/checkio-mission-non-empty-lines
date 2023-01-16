@@ -5,7 +5,7 @@
     </div>
     <div class="answer">
         <p>
-            💡 The idea is the following - to split the text by new line separator, iterate over those lines and if a line is not empty - to encrease the pre-declared counter. 
+            💡 The idea is the following - to split the text by new line separator, iterate over those lines and if a line is not empty - to increase the pre-declared counter. 
         </p>
     </div>
 </div>
@@ -62,14 +62,14 @@ for (let line of text.split("\n")){...}
     </div>
     <div class="answer">
         <p>
-            Now inside loop you need to check every line for emptyness. You may do it with <a target="_blank" href="https://www.w3schools.com/js/js_if_else.asp">if statement</a> and <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> method. It allows to remove all whitespace from the beginning and end of the string. If there is no characters in line, it become totally empty after trimming. Otherwise the line is not empty.
+            Now inside loop you need to check every line for emptiness. You may do it with <a target="_blank" href="https://www.w3schools.com/js/js_if_else.asp">if statement</a> and <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> method. It allows to remove all whitespace from the beginning and end of the string. If there is no characters in line, it become totally empty after trimming. Otherwise the line is not empty.
         </p>
         <pre class="brush: javascript">
 if (line.trim())
     ...
         </pre>
         <p>
-            If the condition is <b class="code">true</b> (current line is not empty), encrease the counter <b class="code">res</b>.
+            If the condition is <b class="code">true</b> (current line is not empty), increase the counter <b class="code">res</b>.
         </p>
         <pre class="brush: javascript">
 res += 1
