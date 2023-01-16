@@ -1,0 +1,134 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>I have no idea how to start solving this mission.</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 The idea is the following - to split the text by new line separator, iterate over those lines and if a line is not empty - to encrease the pre-declared counter. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, what should I start from?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Let's declare a new variable <b class="code">res</b> with the initial value <b class="code">0</b>. It's your counter of non-empty lines. Your function must return its final value at the end.
+        </p>
+        <pre class="brush: javascript">
+let res = 0;
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            How to split the text by new line separator?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Read about <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a> method. Use it with new line character (<b class="code">"\n"</b>) as argument.
+        </p>
+        <pre class="brush: javascript">
+text.split("\n")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            How to iterate over separate lines of text?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Use <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of loop</a> to iterate over lines of splitted text as values of new variable <b class="code">line</b>.
+        </p>
+        <pre class="brush: javascript">
+for (let line of text.split("\n")){...}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            What should I do next?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Now inside loop you need to check every line for emptyness. You may do it with <a target="_blank" href="https://www.w3schools.com/js/js_if_else.asp">if statement</a> and <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> method. It allows to remove all whitespace from the beginning and end of the string. If there is no characters in line, it become totally empty after trimming. Otherwise the line is not empty.
+        </p>
+        <pre class="brush: javascript">
+if (line.trim())
+    ...
+        </pre>
+        <p>
+            If the condition is <b class="code">true</b> (current line is not empty), encrease the counter <b class="code">res</b>.
+        </p>
+        <pre class="brush: javascript">
+res += 1
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>So, how my final solution should look like?</p>
+    </div>
+    <div class="answer">
+        <p>
+            You just need to wrap your code into function expression and join all previous hints together.
+        </p>
+        <p>Here is the whole solution:</p>
+        <pre class="brush: javascript">
+function nonEmptyLines(text: string): number {
+
+    let res = 0;
+    for (let line of text.split("\n")){
+        if (line.trim())
+            res += 1
+    }
+    return res
+}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Show me more solutions!<br />
+        'Cause I wanna be a real 🥇 Javascript Hero!</p>
+    </div>
+    <div class="answer">
+        <p>Sure, grab it!</p>
+        <p>
+            This solution is oneliner. It uses anonymous function, splits the text, filter from array of separate lines non-empty ones (has non-empty value after trimming) and take the length of the resulted array.
+        </p>
+        <pre class="brush: javascript">
+var nonEmptyLines = (text: string): number => text
+    .split('\n')
+    .filter(s => s.trim())
+    .length;
+        </pre>
+        <p>
+            Using regular expression, find all character sequences, that end with a new line character (last word in each line) and take the length of the resulted array.
+        </p>
+        <pre class="brush: javascript">
+var nonEmptyLines = text => ((text+'\n').match(/[^\n ]\n/g) || []).length
+        </pre>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Thanks! I know and understand more now! Everything works fine!</p>
+    </div>
+    <div class="answer">
+        👍 Glad to hear it!
+    </div>
+</div>
+</body>
