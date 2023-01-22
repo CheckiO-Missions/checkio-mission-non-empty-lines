@@ -26,7 +26,6 @@ only one line
             '''],
             "answer": 1
         },
-
         {
             "input": ['''
 Lorem ipsum dolor sit amet,
@@ -38,7 +37,6 @@ Nam odio nisi, aliquam
         },
     ],
     "Extra": [
-
         {
             "input": ['''
 Lorem ipsum dolor sit amet,
@@ -51,7 +49,6 @@ Nullam ante ligula,
             '''],
             "answer": 5,
         },
-
         {
             "input": ['''
 Do you want,
