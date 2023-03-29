@@ -120,6 +120,7 @@ for i in text.split():
         </p>
     </div>
     <div class="answer">
+        <div class="spoiler">
         <pre class="brush: python">
 def non_empty_lines(text: str) -> int:
 
@@ -129,15 +130,18 @@ def non_empty_lines(text: str) -> int:
             t += 1
     return t
         </pre>
+        </div>
         <p>
             Подивись на рішення місії в один рядок, цей варіант дозволяє зменшити твій код і зробити його більш розвантаженим від надлишкових змінних типу <b class="code">t = 0</b>.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def non_empty_lines(text: str) -> int:
     # Тут ми використовуємо не лічильник рядків, а список з непорожніх рядків.
     # А як результат повертаємо його довжину за допомогою len()
     return len(x for x in s.split("\n") if x.strip())
         </pre>
+        </div>
     </div>
 </div>
 </body>
