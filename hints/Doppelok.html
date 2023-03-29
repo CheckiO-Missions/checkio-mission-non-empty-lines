@@ -121,6 +121,7 @@ for i in text.split():
         </p>
     </div>
     <div class="answer">
+        <div class="spoiler">
         <pre class="brush: python">
 def non_empty_lines(text: str) -> int:
 
@@ -130,15 +131,18 @@ def non_empty_lines(text: str) -> int:
             t += 1
     return t
         </pre>
+        </div>
         <p>
             Look at the one-line mission solution, this option allows you to reduce your code and make it more lightweight from redundant variables of the <b class="code">t = 0</b> type.
         </p>
+        <div class="spoiler">
         <pre class="brush: python">
 def non_empty_lines(text: str) -> int:
     # Here we are not using a row counter, but a list of non-empty rows.
     # And as a result, we return its length using len()
     return len(x for x in s.split("\n") if x.strip())
         </pre>
+        </div>
     </div>
 </div>
 </body>
