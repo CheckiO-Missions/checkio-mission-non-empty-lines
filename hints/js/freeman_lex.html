@@ -85,6 +85,7 @@ res += 1
             You just need to wrap your code into function expression and join all previous hints together.
         </p>
         <p>Here is the whole solution:</p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 function nonEmptyLines(text: string): number {
 
@@ -96,6 +97,7 @@ function nonEmptyLines(text: string): number {
     return res
 }
         </pre>
+        </div>
     </div>
 </div>
 <div class="question-answer">
@@ -108,18 +110,22 @@ function nonEmptyLines(text: string): number {
         <p>
             This solution is oneliner. It uses anonymous function, splits the text, filter from array of separate lines non-empty ones (has non-empty value after trimming) and take the length of the resulted array.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 var nonEmptyLines = (text: string): number => text
     .split('\n')
     .filter(s => s.trim())
     .length;
         </pre>
+        </div>
         <p>
             Using regular expression, find all character sequences, that end with a new line character (last word in each line) and take the length of the resulted array.
         </p>
+        <div class="spoiler">
         <pre class="brush: javascript">
 var nonEmptyLines = text => ((text+'\n').match(/[^\n ]\n/g) || []).length
         </pre>
+        </div>
         <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
     </div>
 </div>
