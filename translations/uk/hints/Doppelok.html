@@ -139,7 +139,7 @@ def non_empty_lines(text: str) -> int:
 def non_empty_lines(text: str) -> int:
     # Тут ми використовуємо не лічильник рядків, а список з непорожніх рядків.
     # А як результат повертаємо його довжину за допомогою len()
-    return len(x for x in s.split("\n") if x.strip())
+    return len([x for x in text.split("\n") if x.strip()])
         </pre>
         </div>
     </div>
