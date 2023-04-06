@@ -140,7 +140,7 @@ def non_empty_lines(text: str) -> int:
 def non_empty_lines(text: str) -> int:
     # Here we are not using a row counter, but a list of non-empty rows.
     # And as a result, we return its length using len()
-    return len(x for x in s.split("\n") if x.strip())
+    return len([x for x in text.split("\n") if x.strip()])
         </pre>
         </div>
     </div>
