@@ -8,18 +8,18 @@
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> A text.
+    <strong>Input:</strong> A text.
 </p>
 
 <p>
-    <strong>Output: </strong> An int. 
+    <strong>Output:</strong> {% if is_js %}A <span translate="repeat">number</span>{% else %}An <span translate="repeat">integer</span>{% endif %}. 
 </p>
 
 
 <!-- Give some usage examples -->
 <div class="for_info_only">
     <p>
-        <strong>Example:</strong>
+        <strong>Examples:</strong>
     </p>
 
 <pre class="brush: {% if is_js %}javascript{% else %}python{% endif %}">{{init_code_tmpl}}</pre>
