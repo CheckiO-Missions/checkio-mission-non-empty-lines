@@ -1,0 +1,140 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Je n'ai aucune idée de la manière de commencer à résoudre cette mission.</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡 L'idée est la suivante: diviser le texte par un nouveau séparateur de ligne, itérer sur ces lignes et si une ligne n'est pas vide, augmenter le compteur prédéclaré. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, par quoi dois-je commencer?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Déclarons une nouvelle variable <b class="code">res</b> avec la valeur initiale <b class="code">0</b>. C'est votre compteur de lignes non vides. Votre fonction doit retourner sa valeur finale à la fin.
+        </p>
+        <pre class="brush: javascript">
+let res = 0;
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Comment séparer le texte par un nouveau séparateur de ligne?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Lisez la méthode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a>. Utilisez-la avec le caractère de retour à la ligne (<b class="code">"\n"</b>) comme argument.
+        </p>
+        <pre class="brush: javascript">
+text.split("\n")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Comment itérer sur des lignes de texte séparées?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Utilisez <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of loop</a> pour itérer sur les lignes de texte séparées en tant que valeurs de la nouvelle variable <b class="code">line</b>.
+        </p>
+        <pre class="brush: javascript">
+for (let line of text.split("\n")){...}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Que dois-je faire ensuite?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Maintenant, à l'intérieur de la boucle, vous devez vérifier que chaque ligne est vide. Vous pouvez le faire avec les méthodes <a target="_blank" href="https://www.w3schools.com/js/js_if_else.asp">if statement</a> et <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a>. Elles permettent de supprimer tous les espaces blancs au début et à la fin de la chaîne. S'il n'y a pas de caractères dans la ligne, elle devient totalement vide après la suppression. Dans le cas contraire, la ligne n'est pas vide.
+        </p>
+        <pre class="brush: javascript">
+if (line.trim())
+    ...
+        </pre>
+        <p>
+            Si la condition est <b class="code">true</b> (la ligne courante n'est pas vide), augmentez le compteur <b class="code">res</b>.
+        </p>
+        <pre class="brush: javascript">
+res += 1
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Alors, à quoi devrait ressembler ma solution finale?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Il vous suffit d'envelopper votre code dans une expression de fonction et de réunir tous les indices précédents.
+        </p>
+        <p>Voici la solution complète:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonEmptyLines(text: string): number {
+
+    let res = 0;
+    for (let line of text.split("\n")){
+        if (line.trim())
+            res += 1
+    }
+    return res
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Montrez-moi d'autres solutions!<br />
+        parce que je veux être un vrai 🥇 Javascript Hero!</p>
+    </div>
+    <div class="answer">
+        <p>Bien sûr, prenez-le!</p>
+        <p>
+            Cette solution est uneliner. Il utilise une fonction anonyme, divise le texte, filtre à partir du tableau de lignes séparées non vides (a la valeur non vide après le rognage) et prendre la longueur du tableau résultant.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var nonEmptyLines = (text: string): number => text
+    .split('\n')
+    .filter(s => s.trim())
+    .length;
+        </pre>
+        </div>
+        <p>
+            En utilisant une expression régulière, trouvez toutes les séquences de caractères qui se terminent par un caractère de nouvelle ligne (le dernier mot de chaque ligne) et calculez la longueur du tableau obtenu.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var nonEmptyLines = text => ((text+'\n').match(/[^\n ]\n/g) || []).length
+        </pre>
+        </div>
+        <p><b>Click "Best solutions" at mission menu and see a lot of other interesting solutions!</b></p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Merci beaucoup! Je comprends mieux maintenant! Tout fonctionne bien!</p>
+    </div>
+    <div class="answer">
+        👍 Heureux de l'apprendre!
+    </div>
+</div>
+</body>
