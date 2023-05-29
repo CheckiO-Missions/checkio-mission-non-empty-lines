@@ -35,8 +35,8 @@
         </p>
         <pre class="brush: python">
 text = "Hello, world!"
-# By default, str.split() return a list of the words in the string,
-# using "sep" as spaces
+# Par défaut, str.split() renvoie une liste des mots de la chaîne,
+# l'utilisation de "sep" comme espaces
 print(text.split())  
        </pre>
        <div class="output">
@@ -46,7 +46,7 @@ print(text.split())
         </pre>
        </div>       
        <pre class="brush: python">
-# If we enter "sep" as letter "o", we will see next
+# Si nous saisissons "sep" comme lettre "o", nous verrons ce qui suit
 print(text.split('o'))
        </pre>
        <div class="output">
@@ -72,9 +72,8 @@ print(text.split('o'))
         </p>
         <pre class="brush: python">
 txt = "     banana     "
-# We have a lot of spaces at the beginning and at the end of the word
-# Using txt.strip() we remove spaces at the beginning and at the
-# end of the word
+# Nous avons beaucoup d'espaces au début et à la fin du mot
+# En utilisant txt.strip(), nous supprimons les espaces au début et à la fin du mot.
 print(txt.strip())
         </pre>
         <div class="output">
@@ -97,10 +96,10 @@ print(txt.strip())
         </p>
         <pre class="brush: python">
 text = "Hello, world!"
-# Use for loop to iterate the splitted text
+# Utiliser une boucle for pour itérer le texte divisé
 # ("Hello," and "world!")
 for i in text.split():  
-    # Check if the strings are not empty                    
+    # Vérifier si les chaînes ne sont pas vides                    
     if len(i.strip()) > 0:
         # Print "OK" if all good
         print("OK")
@@ -138,8 +137,8 @@ def non_empty_lines(text: str) -> int:
         <div class="spoiler">
         <pre class="brush: python">
 def non_empty_lines(text: str) -> int:
-    # Here we are not using a row counter, but a list of non-empty rows.
-    # And as a result, we return its length using len()
+    # Ici, nous n'utilisons pas un compteur de lignes, mais une liste de lignes non vides.
+    # En conséquence, nous retournons sa longueur à l'aide de len()
     return len([x for x in text.split("\n") if x.strip()])
         </pre>
         </div>
