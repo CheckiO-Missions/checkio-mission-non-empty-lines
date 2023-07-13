@@ -1,0 +1,144 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我不知道如何开始解决这项任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            您需要将给定的文本分割成字符串，然后过滤空字符串（或者即使字符串中只有空格）和非空字符串。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我需要帮助才能完成任务。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            请您阅读有关两个字符串方法的信息：<a target="_blank" href='https://docs.python.org/3.10/library/stdtypes.html?highlight=split#str.split'>str.split()</a> 和<a target="_blank" href='https://docs.python.org/3.10/library/stdtypes.html?highlight=strip#str.strip'>str.strip()</a> 。
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我已经读了一半。需要帮助！
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            看看<b class="code">str.split()</b> 方法是如何工作的：
+        </p>
+        <pre class="brush: python">
+text = "Hello, world!"
+# By default, str.split() return a list of the words in the string,
+# using "sep" as spaces
+print(text.split())  
+       </pre>
+       <div class="output">
+        <p>输出：</p>
+        <pre>
+['Hello,', 'world!']</pre>
+       </div>       
+       <pre class="brush: python">
+# If we enter "sep" as letter "o", we will see next
+print(text.split('o'))
+       </pre>
+       <div class="output">
+        <p>输出：</p>
+        <pre>
+['Hell', ', w', 'rld!']</pre>
+       </div>
+       <p>
+            在我们的例子中，您需要使用<b class="code">"\n"</b> 作为 "sep"。这是新行符号，标志着当前行结束和新行开始的位置。
+       </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我卡住了。我需要一点提示。
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            看看<b class="code">str.strip()</b> 方法是如何工作的：
+        </p>
+        <pre class="brush: python">
+txt = "     banana     "
+# We have a lot of spaces at the beginning and at the end of the word
+# Using txt.strip() we remove spaces at the beginning and at the
+# end of the word
+print(txt.strip())
+        </pre>
+        <div class="output">
+            <p>输出：</p>
+            <pre>
+"banana"</pre>
+        </div> 
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            我试了所有能试的。没有任何效果。求救信号
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            好的，你需要使用<b class="code">for</b> 循环和条件<b class="code">if</b> 将两种方法结合起来。在条件<b class="code">if</b> 中，我们需要使用<a target="_blank" href='https://docs.python.org/3.10/library/functions.html#len'>len()</a> 检查字符串是否为空。
+        </p>
+        <pre class="brush: python">
+text = "Hello, world!"
+# Use for loop to iterate the splitted text
+# ("Hello," and "world!")
+for i in text.split():  
+    # Check if the strings are not empty                    
+    if len(i.strip())> 0:
+        # Print "OK" if all good
+        print("OK")
+        </pre>
+        <div class="output">
+            <p>输出：</p>
+            <pre>
+"OK"
+"OK"</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            最后一个问题。我的最终解决方案是怎样的？
+        </p>
+    </div>
+    <div class="answer">
+        <div class="spoiler">
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+
+    t = 0
+    for i in text.split('\n'):
+        if len(i.strip())> 0:
+            t += 1
+    return t
+        </pre>
+        </div>
+        <p>
+            请看单线任务解决方案，该选项允许您减少代码，使其更轻量级，避免<b class="code">t = 0</b> 类型的冗余变量。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+    # Here we are not using a row counter, but a list of non-empty rows.
+    # And as a result, we return its length using len()
+    return len([x for x in text.split("\n") if x.strip()])
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
