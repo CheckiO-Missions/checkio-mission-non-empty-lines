@@ -1,0 +1,140 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>我不知道如何开始解决这项任务。</p>
+    </div>
+    <div class="answer">
+        <p>
+            💡我们的想法如下--用新的行分隔符分割文本，遍历这些行，如果某一行不是空的--增加预先声明的计数器。 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>好吧，我应该从什么开始呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            让我们声明一个新变量<b class="code">res</b> ，初始值为<b class="code">0</b> 。这是非空行的计数器。您的函数必须在最后返回其最终值。
+        </p>
+        <pre class="brush: javascript">
+let res = 0;
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            如何用新的分隔符分割文本？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            请阅读<a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a> 方法。使用新行字符 (<b class="code">"\n"</b>) 作为参数。
+        </p>
+        <pre class="brush: javascript">
+text.split("\n")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            如何遍历单独的文本行？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            使用<a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of loop</a> 遍历分行文本，作为新变量<b class="code">line</b> 的值。
+        </p>
+        <pre class="brush: javascript">
+for (let line of text.split("\n")){...}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            下一步我应该做什么？
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            现在，在循环内部，您需要检查每一行的空性。您可以使用<a target="_blank" href="https://www.w3schools.com/js/js_if_else.asp">if statement</a> 和<a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> 方法。它可以删除字符串开头和结尾的所有空白。如果行中没有字符，则在剪切后变成空行。否则该行不是空行。
+        </p>
+        <pre class="brush: javascript">
+if (line.trim())
+    ...
+        </pre>
+        <p>
+            如果条件是<b class="code">true</b> (当前行不是空行), 增加计数器<b class="code">res</b>.
+        </p>
+        <pre class="brush: javascript">
+res += 1
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>那么，我的最终解决方案应该是怎样的呢？</p>
+    </div>
+    <div class="answer">
+        <p>
+            您只需将您的代码封装为函数表达式，并将之前所有的提示连接在一起即可。
+        </p>
+        <p>这就是整个解决方案：</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonEmptyLines(text: string): number {
+
+    let res = 0;
+    for (let line of text.split("\n")){
+        if (line.trim())
+            res += 1
+    }
+    return res
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>告诉我更多的解决方案！<br />
+        因为我想成为一个真正的 🥇 Javascript 英雄！</p>
+    </div>
+    <div class="answer">
+        <p>当然，抓住它！</p>
+        <p>
+            这个解决方案是单行的。它使用匿名函数，分割文本，从独立行数组中过滤非空值（修剪后具有非空值），并取结果数组的长度。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var nonEmptyLines = (text: string): number => text
+    .split('\n')
+    .filter(s => s.trim())
+    .length;
+        </pre>
+        </div>
+        <p>
+            使用正则表达式，查找所有以新行字符（每行最后一个单词）结束的字符序列，并计算所得数组的长度。
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var nonEmptyLines = text => ((text+'\n').match(/[^\n ]\n/g) || []).length
+        </pre>
+        </div>
+        <p>点击任务菜单<b>Best Solutions</b> ，查看更多有趣的解决方案！</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>谢谢！我现在知道并理解得更多了！一切正常！</p>
+    </div>
+    <div class="answer">
+        很高兴听到这个消息！
+    </div>
+</div>
+</body>
