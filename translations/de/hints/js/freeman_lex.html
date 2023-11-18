@@ -1,0 +1,140 @@
+<body data-author="freeman_lex">
+<div class="question-answer">
+    <div class="question">
+        <p>Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.</p>
+    </div>
+    <div class="answer">
+        <p>
+            die Idee ist folgende - den Text durch einen neuen Zeilentrenner aufzuteilen, über diese Zeilen zu iterieren und - wenn eine Zeile nicht leer ist - den vordeklarierten Zähler zu erhöhen. 
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Ok, womit soll ich anfangen?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Lassen Sie uns eine neue Variable <b class="code">res</b> mit dem Anfangswert <b class="code">0</b> deklarieren. Das ist Ihr Zähler der nicht leeren Zeilen. Ihre Funktion muss am Ende ihren Endwert zurückgeben.
+        </p>
+        <pre class="brush: javascript">
+let res = 0;
+...
+return res
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie wird der Text durch einen neuen Zeilentrenner geteilt?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Lesen Sie über die Methode <a target="_blank" href="https://www.w3schools.com/jsref/jsref_split.asp">split()</a>. Verwenden Sie sie mit dem Zeilenumbruchzeichen (<b class="code">"\n"</b>) als Argument.
+        </p>
+        <pre class="brush: javascript">
+text.split("\n")
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Wie kann man über einzelne Textzeilen iterieren?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Verwenden Sie <a target="_blank" href="https://www.w3schools.com/js/js_loop_forof.asp">for/of loop</a>, um über die Zeilen des geteilten Textes als Werte der neuen Variablen <b class="code">line</b> zu iterieren.
+        </p>
+        <pre class="brush: javascript">
+for (let line of text.split("\n")){...}
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Was sollte ich als nächstes tun?
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Jetzt müssen Sie innerhalb der Schleife jede Zeile auf Leerzeichen überprüfen. Sie können dies mit der Methode <a target="_blank" href="https://www.w3schools.com/js/js_if_else.asp">if statement</a> und <a target="_blank" href="https://www.w3schools.com/jsref/jsref_trim_string.asp">trim()</a> tun. Damit können Sie alle Leerzeichen am Anfang und am Ende des Strings entfernen. Wenn die Zeile keine Zeichen enthält, ist sie nach dem Abschneiden völlig leer. Andernfalls ist die Zeile nicht leer.
+        </p>
+        <pre class="brush: javascript">
+if (line.trim())
+    ...
+        </pre>
+        <p>
+            Wenn die Bedingung <b class="code">true</b> lautet (die aktuelle Zeile ist nicht leer), erhöhen Sie den Zähler <b class="code">res</b>.
+        </p>
+        <pre class="brush: javascript">
+res += 1
+        </pre>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Wie sollte also meine endgültige Lösung aussehen?</p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen nur Ihren Code in einen Funktionsausdruck verpacken und alle vorherigen Hinweise miteinander verbinden.
+        </p>
+        <p>Hier ist die gesamte Lösung:</p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+function nonEmptyLines(text: string): number {
+
+    let res = 0;
+    for (let line of text.split("\n")){
+        if (line.trim())
+            res += 1
+    }
+    return res
+}
+        </pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Zeigen Sie mir mehr Lösungen!<br />
+        denn ich möchte ein echter 🥇 Javascript-Held sein!</p>
+    </div>
+    <div class="answer">
+        <p>Klar, schnappen Sie es sich!</p>
+        <p>
+            Diese Lösung ist ein Einzeiler. Sie verwendet eine anonyme Funktion, teilt den Text auf, filtert aus dem Array der einzelnen Zeilen die nicht leeren Zeilen heraus (hat nach dem Trimmen einen nicht leeren Wert) und nimmt die Länge des resultierenden Arrays.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var nonEmptyLines = (text: string): number => text
+    .split('\n')
+    .filter(s => s.trim())
+    .length;
+        </pre>
+        </div>
+        <p>
+            Finden Sie mit Hilfe eines regulären Ausdrucks alle Zeichenfolgen, die mit einem Zeilenumbruchzeichen enden (letztes Wort in jeder Zeile) und ermitteln Sie die Länge des resultierenden Arrays.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: javascript">
+var nonEmptyLines = text => ((text+'\n').match(/[^\n ]\n/g) || []).length
+        </pre>
+        </div>
+        <p>Klicken Sie im Missionsmenü auf <b>Best Solutions</b> und sehen Sie sich viele weitere interessante Lösungen an!</p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>Vielen Dank! Ich weiß und verstehe jetzt mehr! Alles funktioniert einwandfrei!</p>
+    </div>
+    <div class="answer">
+        👍 Freut mich zu hören!
+    </div>
+</div>
+</body>

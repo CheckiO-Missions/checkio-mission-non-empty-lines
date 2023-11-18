@@ -1,0 +1,144 @@
+<body data-author="Doppelok">
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe keine Ahnung, wie ich mit der Lösung dieser Aufgabe beginnen soll.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sie müssen den gegebenen Text in Zeichenketten aufteilen und die leeren Zeichenketten (oder auch nur Leerzeichen in der Zeichenkette) und die nicht leeren filtern.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich brauche etwas Hilfe, um mit der Aufgabe fortzufahren.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Es wird für Sie nützlich sein, einige Informationen über zwei String-Methoden zu lesen: <a target="_blank" href='https://docs.python.org/3.10/library/stdtypes.html?highlight=split#str.split'>str.split()</a> und <a target="_blank" href='https://docs.python.org/3.10/library/stdtypes.html?highlight=strip#str.strip'>str.strip()</a>.
+        </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich bin schon halb durch. Ich brauche Hilfe!
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Schauen Sie, wie die Methode <b class="code">str.split()</b> funktioniert:
+        </p>
+        <pre class="brush: python">
+text = "Hello, world!"
+# By default, str.split() return a list of the words in the string,
+# using "sep" as spaces
+print(text.split())  
+       </pre>
+       <div class="output">
+        <p>Ausgabe:</p>
+        <pre>
+['Hello,', 'world!']</pre>
+       </div>       
+       <pre class="brush: python">
+# If we enter "sep" as letter "o", we will see next
+print(text.split('o'))
+       </pre>
+       <div class="output">
+        <p>Ausgabe:</p>
+        <pre>
+['Hell', ', w', 'rld!']</pre>
+       </div>
+       <p>
+            In unserem Fall müssen Sie <b class="code">"\n"</b> als "sep" verwenden. Dies ist das Symbol für eine neue Zeile. Es markiert, wo die aktuelle Zeile endet und eine neue Zeile beginnt.
+       </p>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich komme nicht weiter. Ich brauche einen kleinen Hinweis.
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Sehen Sie sich an, wie die Methode <b class="code">str.strip()</b> funktioniert:
+        </p>
+        <pre class="brush: python">
+txt = "     banana     "
+# We have a lot of spaces at the beginning and at the end of the word
+# Using txt.strip() we remove spaces at the beginning and at the
+# end of the word
+print(txt.strip())
+        </pre>
+        <div class="output">
+            <p>Ausgabe:</p>
+            <pre>
+"banana"</pre>
+        </div> 
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Ich habe alles Mögliche versucht. Nichts funktioniert. SOS
+        </p>
+    </div>
+    <div class="answer">
+        <p>
+            Okay, Sie müssen zwei Methoden kombinieren, indem Sie die Schleife <b class="code">for</b> und die Bedingung <b class="code">if</b> verwenden. In der Bedingung <b class="code">if</b> müssen wir prüfen, ob die Zeichenkette leer ist oder nicht, indem wir <a target="_blank" href='https://docs.python.org/3.10/library/functions.html#len'>len()</a> verwenden.
+        </p>
+        <pre class="brush: python">
+text = "Hello, world!"
+# Use for loop to iterate the splitted text
+# ("Hello," and "world!")
+for i in text.split():  
+    # Check if the strings are not empty                    
+    if len(i.strip())> 0:
+        # Print "OK" if all good
+        print("OK")
+        </pre>
+        <div class="output">
+            <p>Ausgabe:</p>
+            <pre>
+"OK"
+"OK"</pre>
+        </div>
+    </div>
+</div>
+<div class="question-answer">
+    <div class="question">
+        <p>
+            Eine letzte Frage. Wie wird meine endgültige Lösung aussehen?
+        </p>
+    </div>
+    <div class="answer">
+        <div class="spoiler">
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+
+    t = 0
+    for i in text.split('\n'):
+        if len(i.strip())> 0:
+            t += 1
+    return t
+        </pre>
+        </div>
+        <p>
+            Sehen Sie sich die einzeilige Missionslösung an. Mit dieser Option können Sie Ihren Code reduzieren und ihn von überflüssigen Variablen des Typs <b class="code">t = 0</b> befreien.
+        </p>
+        <div class="spoiler">
+        <pre class="brush: python">
+def non_empty_lines(text: str) -> int:
+    # Here we are not using a row counter, but a list of non-empty rows.
+    # And as a result, we return its length using len()
+    return len([x for x in text.split("\n") if x.strip()])
+        </pre>
+        </div>
+    </div>
+</div>
+</body>
