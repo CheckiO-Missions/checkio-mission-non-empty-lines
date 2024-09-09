@@ -58,5 +58,13 @@ about lazy boy?
             '''],
             "answer": 3,
         },
+        {
+            "input": ['''
+three identic lines
+three identic lines
+three identic lines
+            '''],
+            "answer": 3,
+        },
     ]
 }
